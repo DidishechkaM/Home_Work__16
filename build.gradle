@@ -36,15 +36,18 @@ dependencies {
 
     )
 }
-tasks.withType(Test) {
-    useJUnitPlatform()
-    systemProperties(System.getProperties())
+
 
 test {
+    println("Property dryRun: " + System.getProperty("dryRun"))
+    println("Property os.name: " + System.getProperty("os.name"))
+    println("Property java.vm.version: " + System.getProperty("java.vm.version"))
+    println("Property browser: " + System.getProperty("browser"))
+    println("Property env: " + System.getProperty("env"))
     useJUnitPlatform()
 }
 
-}
+
     task property_test(type: Test) {
         useJUnitPlatform {
             includeTags("remote")
@@ -54,5 +57,7 @@ test {
                 includeTags("random")
             }
         }
-
+        tasks.withType(Test) {
+            systemProperties(System.getProperties())
+        }
     }
