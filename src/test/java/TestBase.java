@@ -23,11 +23,11 @@ public class TestBase {
     static void BeforeAllWithConfiguration() {
 
 
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com/");
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.baseUrl = webConfig.getBaseUrl();
+        Configuration.browserSize = webConfig.getBrowserSize();
+        Configuration.browser = webConfig.getBrowser();
+        Configuration.browserVersion = webConfig.getBrowserVersion();
+        Configuration.remote = webConfig.getRemoteUrl();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
