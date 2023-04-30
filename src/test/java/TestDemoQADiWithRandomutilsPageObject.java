@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static randomUtils.RandomUtils.getRandomEmail;
 import static randomUtils.RandomUtils.getRandomString;
+
 @Tag("random")
 public class TestDemoQADiWithRandomutilsPageObject extends TestBase {
     String userName = getRandomString(10),
             lastNme = getRandomString(10),
             userEmail = getRandomEmail();
+
     @Test
     void fillTest() {
 
@@ -39,7 +41,5 @@ public class TestDemoQADiWithRandomutilsPageObject extends TestBase {
         registrationPage.verifyValueTable("Address", "Address");
         registrationPage.verifyValueTable("State and City", "Uttar Pradesh Agra");
         registrationPage.closeModal();
-
     }
-
 }

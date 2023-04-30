@@ -5,7 +5,6 @@ import static io.qameta.allure.Allure.step;
 
 public class TestDemoQADiWithPageObject extends TestBase {
 
-
     String userName = "Dian",
             lastNme = " Maksimowa",
             userEmail = "maksimowa@yandex.ru";
